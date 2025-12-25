@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+}
+
+#searchContainer {
+  margin-bottom: 30px;
+}
+
+#searchContainer input {
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+
+#searchContainer button {
+  display: block;
+  margin: 15px auto 0 auto;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+}
+#searchContainer button:hover {
+  background-color: #444;
+}
+
+#champName {
+  font-family: 'Cinzel', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#carouselContainer {
+  position: relative;
+  width: 500px;
+  margin: 0 auto 20px auto;
+}
+
+#carouselWrapper {
+  overflow: hidden;
+  width: 500px;
+  position: relative;
+}
+
+#carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+.carouselSkin {
+  width: 400px;
+  height: 225px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+#prevSkin, #nextSkin {
+  width: 300px;
+  height: 170px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+#champImg { z-index: 2; }
+
+#prevSkin { transform: scale(0.8); }
+#nextSkin { transform: scale(0.8); }
+
+#leftGradient, #rightGradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#leftGradient {
+  left: 0;
+  background: linear-gradient(to right, #121212, transparent);
+}
+
+#rightGradient {
+  right: 0;
+  background: linear-gradient(to left, #121212, transparent);
+}
+
+.carouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0008;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+#prevBtn { left: -25px; }
+#prevBtn::after { content: '\2190'; font-size: 24px; color: #fff; }
+#nextBtn { right: -25px; }
+#nextBtn::after { content: '\2192'; font-size: 24px; color: #fff; }
+.carouselBtn:hover { background: #000c; }
+
+#skinTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#champBlurb {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 5px auto 20px auto;
+  color: #ccc;
+  font-style: italic;
+  display: none;
+}
+
+#abilities {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.ability {
+  margin: 10px;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+  position: relative;
+}
+
+.ability img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 80px; /* place above the skill icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 250px;       /* wider tooltip */
+  max-width: 300px;   /* cap at 300px if necessary */
+  text-align: center;
+  line-height: 1.4;   /* better readability */
+  z-index: 100;
+  box-shadow: 0 0 12px #000a;
+  word-wrap: break-word; /* wrap long words */
+}
+
+
+/* Hide initially */
+#champImg, #prevSkin, #nextSkin, #prevBtn, #nextBtn, #skinTitle, #abilities {
+  display: none;
+}

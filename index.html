@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riot Games API (LOL)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="searchContainer">
+    <input type="text" id="championName" placeholder="Enter Champion Name">
+    <button onclick="fetchChampion()">Search Champion</button>
+  </div>
+
+  <div id="championContainer">
+    <h2 id="champName"></h2>
+
+    <div id="carouselContainer">
+      <button id="prevBtn" class="carouselBtn" onclick="prevSkin()"></button>
+      <div id="carouselWrapper">
+        <div id="carousel">
+          <img id="prevSkin" class="carouselSkin" src="" alt="">
+          <img id="champImg" class="carouselSkin" src="" alt="">
+          <img id="nextSkin" class="carouselSkin" src="" alt="">
+        </div>
+      </div>
+      <button id="nextBtn" class="carouselBtn" onclick="nextSkin()"></button>
+      <div id="leftGradient"></div>
+      <div id="rightGradient"></div>
+    </div>
+
+    <div id="skinTitle"></div>
+    <p id="champBlurb"></p>
+
+    <div id="abilities"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
